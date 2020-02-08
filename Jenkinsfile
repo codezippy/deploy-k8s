@@ -4,6 +4,7 @@ pipeline {
         stage('ImageBuild') { 
             steps {
                  
+                sh "echo hello"
             }
         }
         stage('Test') { 
