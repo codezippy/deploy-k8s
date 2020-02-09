@@ -13,6 +13,11 @@ pipeline {
                 sh "docker push 723008196684.dkr.ecr.us-east-1.amazonaws.com/dummy-testing:${BUILD_NUMBER}"
             }
         }
+        stage('Approval') {
+             steps {
+                input message: 'User input required', ok: 'Release!',
+             }
+        }
         stage('Deploy') { 
             steps {
                 sh "echo ${BUILD_NUMBER}"
