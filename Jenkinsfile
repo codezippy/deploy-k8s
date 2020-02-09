@@ -14,8 +14,11 @@ pipeline {
             }
         }
         stage('Approval') {
-           input{
+           input {
                message "Do you want to proceed for production deployment?"
+            }
+           steps {
+               sh "echo 'Approval for Deploy'" 
             }             
         }
         stage('Deploy') { 
