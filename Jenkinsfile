@@ -15,7 +15,7 @@ pipeline {
         }
         stage('Deploy') { 
             steps {
-                sh "echo hello" 
+                sh "echo ${BUILD_NUMBER}" 
             }
         }
     }
