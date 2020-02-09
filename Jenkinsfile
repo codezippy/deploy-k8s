@@ -16,7 +16,7 @@ pipeline {
         stage('Deploy') { 
             steps {
                 sh "echo ${BUILD_NUMBER}"
-                sh "kubectl apply -f deployments.yml --kubeconfig=.kube/fourkites-common-eks-dev-cluster" 
+                sh "kubectl apply -f deployments.yml --kubeconfig=kube/fourkites-common-eks-dev-cluster" 
             }
         }
     }

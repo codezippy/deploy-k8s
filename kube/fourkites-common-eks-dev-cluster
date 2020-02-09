@@ -1,0 +1,27 @@
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUN5RENDQWJDZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwcmRXSmwKY201bGRHVnpNQjRYRFRJd01ESXdNekl4TlRNek1Wb1hEVE13TURFek1USXhOVE16TVZvd0ZURVRNQkVHQTFVRQpBeE1LYTNWaVpYSnVaWFJsY3pDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBS3RsClNiRXRlYXZ0NU9qZ1RoeHh2dm9vQnpzQXdnL3BqRTB0aFpDL2k3ZXVDWFJJTitvdTJtUExBSDlPM0xQK0pONnkKM3RFV1AxSldJTk9IcDhNZElsejdFSXVCYU9hY0NEZlRjTWQ0ZVc2VDI5eWpaQk9SRDM4dHpVM2pHanVHcXZXRwppU1pPdGUwT2RSRkNmZUFQeW9lK2JFU0pmZmR2azRnUndIN3padEFhMGZxbXdCN0tRN1o1UkFJVmdNTWxybUFZCnFmb0V5dUFXTlNKS2lWT3ljWWVIanFveVczNHFqYVYyZDkvRkgwbnNXZUYxZE0xS1J4SkMvbHlWZGpIZCtIYkEKTGlHMTFDcFl6N1Z4alBITTVEZEZxOFdLVkpER2VWVDZPcU5IWHJyYXR1SnRwczhlL2Q5ZmE5cVVlRjZUUXFZRwpqakJmWDR0blkwUm45VlBHdHc4Q0F3RUFBYU1qTUNFd0RnWURWUjBQQVFIL0JBUURBZ0trTUE4R0ExVWRFd0VCCi93UUZNQU1CQWY4d0RRWUpLb1pJaHZjTkFRRUxCUUFEZ2dFQkFHbU9XR0lCbHdNUjJPUXJPbnd5MlhkOU1UZnoKSTVrT25GTHdjZ3llYlN0T0VjMHhzcVZ5S3dGbXNCWnhwanhENWRtbmxSS25VTm9UVld5WXFSSm13aU1xVFl5KwpnbXRqaWVOdkJDVnFvcUx5NmhxOWVGaGdTL29IcTUyeVZUYjI0KzcrZDNPNVFUUXQ3TEJEa3VYOHB3bU5BQk0yCnpjWnl3UDRNU2kxSHJodnBrVkZaTk00eDAvSjN6SkJRZ0x2Sm9sZk9TT0IvUFBrdkhVZW5DTXIycnBqNTE0N3UKcTA4TlNsMzlFZngyWWRsOVpUUUMxbEZNaHN4Ymh3VXI3b0tqei9TeFhabTFGUG1lNlc3ZUV5ejRjNVI0Wnc1bAozeDl3K25MenVnQTZxR1QrbU5BSE1pT2NJS3FDNUlrcXVEcEg0OUZjVXlHQjNiWlJBYmlSMGEvN25uaz0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=
+    server: https://D2E079CE0777D62A7F0DF23BDD248B1A.yl4.us-east-1.eks.amazonaws.com
+  name: arn:aws:eks:us-east-1:723008196684:cluster/fourkites-common-eks-dev-cluster
+contexts:
+- context:
+    cluster: arn:aws:eks:us-east-1:723008196684:cluster/fourkites-common-eks-dev-cluster
+    user: arn:aws:eks:us-east-1:723008196684:cluster/fourkites-common-eks-dev-cluster
+  name: arn:aws:eks:us-east-1:723008196684:cluster/fourkites-common-eks-dev-cluster
+current-context: arn:aws:eks:us-east-1:723008196684:cluster/fourkites-common-eks-dev-cluster
+kind: Config
+preferences: {}
+users:
+- name: arn:aws:eks:us-east-1:723008196684:cluster/fourkites-common-eks-dev-cluster
+  user:
+    exec:
+      apiVersion: client.authentication.k8s.io/v1alpha1
+      args:
+      - --region
+      - us-east-1
+      - eks
+      - get-token
+      - --cluster-name
+      - fourkites-common-eks-dev-cluster
+      command: aws
