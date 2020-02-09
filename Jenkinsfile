@@ -14,9 +14,9 @@ pipeline {
             }
         }
         stage('Approval') {
-             steps {
-                input message: 'User input required', ok: 'Release!',
-             }
+           input{
+               message "Do you want to proceed for production deployment?"
+            }             
         }
         stage('Deploy') { 
             steps {
