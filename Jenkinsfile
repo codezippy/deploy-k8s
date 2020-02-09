@@ -16,6 +16,7 @@ pipeline {
         stage('Deploy') { 
             steps {
                 sh "echo ${BUILD_NUMBER}"
+                sh "sed -i '/723008196684.dkr.ecr.us-east-1.amazonaws.com/s/tag/${BUILD_NUMBER}/' deployments.yml"
                 sh "kubectl apply -f deployments.yml --kubeconfig=kube/fourkites-common-eks-dev-cluster" 
             }
         }

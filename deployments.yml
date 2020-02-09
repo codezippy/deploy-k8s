@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: 723008196684.dkr.ecr.us-east-1.amazonaws.com/dummy-testing:${BUILD_NUMBER}
+        image: 723008196684.dkr.ecr.us-east-1.amazonaws.com/dummy-testing:tag
         ports:
         - containerPort: 80
 ---
