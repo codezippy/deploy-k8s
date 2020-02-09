@@ -1,0 +1,38 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  namespace: karthik
+  labels:
+    app: nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: 723008196684.dkr.ecr.us-east-1.amazonaws.com/dummy-testing:${BUILD_NUMBER}
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:  
+  name: lb1
+  namespace: karthik
+spec:
+  selector:    
+    app: nginx
+  type: LoadBalancer
+  ports:  
+  - name: http
+    port: 80
+    targetPort: 80
+    protocol: TCP
